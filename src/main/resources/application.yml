@@ -1,0 +1,21 @@
+spring:
+  activemq:
+    in-memory: false
+    pool:
+      enable: false
+
+active-mq-url: failover:(tcp://localhost:61616,tcp://localhost:61616)?randomize=false
+queue:
+  name: com.kvedro.bin.mailsender.mailbox
+  errorName: com.kvedro.bin.mailsender.failedmailbox
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: hawtio,jolokia
+mail:
+  port: 25
+  host: localhost
+  username: redacted
+  password: redacted
